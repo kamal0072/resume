@@ -1,0 +1,11 @@
+/* #id_city{
+    display: inline-flex;
+    margin-left: 10px;
+    padding: 10px;
+} */
+#id_gender{
+    display: inline-flex;
+}
+.text-danger{
+    font-size: 20px;
+}

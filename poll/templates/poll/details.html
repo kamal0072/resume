@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load myfilters %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Detail</title>
+</head>
+<body>
+        <div class="container">
+            <h2 class="text text-center text-primary bg-warning p-3 mt-3">Complete detail of {{candi.name}}</h2>
+            <div class="row">
+                <div class="col-6">
+                    <table class="table table-bordered mt-4">
+                        <tr>
+                            <td>Candidate Name:</td>
+                            <td>{{candi.name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Candidate Date of Birth:</td>
+                            <td>{{candi.dob}}</td>
+                        </tr>
+                        <tr>
+                            <td>Gender</td>
+                            <td>{{candi.gender}}</td>
+                        </tr>
+                        <tr>
+                            <td>Candidate Location</td>
+                            <td>{{candi.location}}</td>
+                        </tr>
+                        <tr>
+                            <td>City</td>
+                            <td>{{candi.city}}</td>
+                        </tr>
+                        <tr>
+                            <td>Candidate Pin Code</td>
+                            <td>{{candi.pin}}</td>
+                        </tr>
+                        <tr>
+                            <td>State</td>
+                            <td>{{candi.state}}</td>
+                        </tr>
+                        <tr>
+                            <td>Mobile Number</td>
+                            <td>{{candi.mobile}}</td>
+                        </tr>
+                        <tr>
+                            <td>Email Address</td>
+                            <td>{{candi.email}}</td>
+                        </tr>
+                        <tr>
+                            <td>Preference</td>
+                            <td>{{candi.job_preference|remove_special:"[],'"}}</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="col-6">
+                    <h3 class="text text-center">Name:{{candi.name}}</h3>
+                    <img class="img-fluid img-thumbnail float-end ml-5 offset" height="400" width="400" src={{candi.candidate_image.url}} alt="No File and Image Available">
+                    <h4 class="text text-center">Date of birth:{{candi.dob}}</h4>
+                </div>
+            </div>
+            <hr>
+            <a class="btn btn-info" href="{% url 'home' %}">Check Another</a>
+        </div>
+</body>
+</html>
